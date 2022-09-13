@@ -20,7 +20,7 @@
       <th>Item URL</th>
     </tr>
     {% comment %} Add the data below this line {% endcomment %}
-    {% for barang in data_katalog %}
+    {% for barang in list_barang %}
     <tr>
         <th>{{barang.item_name}}</th>
         <th>{{barang.item_price}}</th>
