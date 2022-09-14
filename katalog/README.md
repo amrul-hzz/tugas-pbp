@@ -18,7 +18,7 @@ Virtual environment menciptakan ruang terpisah untuk pengembagna suatu proyek. R
 
 ## 3. Cara mengimplementasikan poin 1 sampai dengan 4 pada Tugas 2
    - Poin 1: membuat sebuah fungsi pada views.py yang dapat melakukan pengambilan data dari model dan dikembalikan ke dalam sebuah HTML.
-      Menambahkan fungshi show_katalog() pada views.py. fungsi ini menerima request, mengambil data berdasarkan model, dan mengembalikan context yang dapat ditampilkan pada halaman katalog.html.
+      Menambahkan fungsi show_katalog() pada views.py. fungsi ini menerima request, mengambil data berdasarkan model, dan mengembalikan context yang dapat ditampilkan pada halaman katalog.html.
    - Poin 2: membuat sebuah routing untuk memetakan fungsi yang telah kamu buat pada views.py.
       Menambahkan path menuju show_katalog di urlpatterns di urls.py pada folder katalog. Kemudian, menambahkan file katalog.urls tersebut ke urlpatterns di urls.py pada folder project_django.
    - Poin 3: memetakan data yang didapatkan ke dalam HTML dengan sintaks dari Django untuk pemetaan data template.
