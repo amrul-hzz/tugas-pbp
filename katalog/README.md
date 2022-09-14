@@ -1,9 +1,13 @@
 ## Tugas 2 PBP
 
 Nama            : Amanda Nurul Izzah
+<br>
 NPM             : 2106634080
+<br>
 Kelas           : PBP-C
+<br>
 Link heroku app : https://heroku-exercise-amrul-hzz.herokuapp.com/ 
+<br>
 
 1. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html; 
 
