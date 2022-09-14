@@ -16,7 +16,7 @@ Link Heroku app : https://heroku-exercise-amrul-hzz.herokuapp.com/
 Saat ada request dari user, urls.py akan meneruskannya ke view yang sesuai di views.py. View tersebut akan menggabungkan template HTML dengan data yang didapatkan dari models.py untuk memberikan HTTP response berupa laman HTML.
 
 ## 2. Kenapa menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment? 
-Virtual environment menciptakan ruang terpisah untuk pengembagna suatu proyek. Ruang ini berisi library dan dependency yang digunakan proyek tersebut. Dengan memisahkan ruang seperti ini, pengembangan dua proyek tidak akan mencampuri satu sama lain. Sebenarnya bisa-bisa saja kita membuat aplikasi web tanpa virtual environment, namun jika ada bentrokan nanti kita akan susah sendiri. Oleh karena itu, menggunakan virtual environment adalah best practice.
+Virtual environment menciptakan ruang terpisah untuk pengembagna suatu proyek. Ruang ini berisi library dan dependency yang digunakan proyek tersebut. Dengan memisahkan ruang seperti ini, pengembangan dua proyek tidak akan bercampur dengan satu sama lain. Sebenarnya bisa-bisa saja kita membuat aplikasi web tanpa virtual environment. Namun, jika terjadi bentrokan nanti, kita akan susah sendiri. Oleh karena itu, menggunakan virtual environment adalah best practice.
 
 ## 3. Cara mengimplementasikan poin 1 sampai dengan 4 pada Tugas 2
    - Poin 1: membuat sebuah fungsi pada views.py yang dapat melakukan pengambilan data dari model dan dikembalikan ke dalam sebuah HTML.
