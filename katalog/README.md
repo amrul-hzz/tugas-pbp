@@ -6,12 +6,14 @@ NPM             : 2106634080
 <br>
 Kelas           : PBP-C
 <br>
-Link heroku app : https://heroku-exercise-amrul-hzz.herokuapp.com/ 
+Link Heroku app : https://heroku-exercise-amrul-hzz.herokuapp.com/ 
 <br>
 
 ## 1. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html; 
 
 ![bagan](https://github.com/amrul-hzz/tugas-2-pbp/blob/main/katalog/bagan.png)
+
+Saat ada request dari user, urls.py akan meneruskannya ke view yang sesuai di views.py. View tersebut akan menggabungkan template HTML dengan data yang didapatkan dari models.py untuk memberikan HTTP response berupa laman HTML.
 
 ## 2. Kenapa menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment? 
 Virtual environment menciptakan ruang terpisah untuk pengembagna suatu proyek. Ruang ini berisi library dan dependency yang digunakan proyek tersebut. Dengan memisahkan ruang seperti ini, pengembangan dua proyek tidak akan mencampuri satu sama lain. Sebenarnya bisa-bisa saja kita membuat aplikasi web tanpa virtual environment, namun jika ada bentrokan nanti kita akan susah sendiri. Oleh karena itu, menggunakan virtual environment adalah best practice.
