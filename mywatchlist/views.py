@@ -6,6 +6,8 @@ from django.core import serializers
 def show_mywatchlist_html(request):
     data_barang_mywatchlist = BarangMywatchlist.objects.all()
     context = {
+        "nama" : "Amanda Nurul Izzah",
+        "student_id" : "2106634080",
         "list_barang" : data_barang_mywatchlist,
     }
 
