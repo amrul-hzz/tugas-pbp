@@ -26,7 +26,7 @@ Karena kita memerlukan cara untuk bertukar data antar platform. Data yang komple
 7. Di folder mywatchlist, buat folder baru bernama templates. Dalam templates, tambahkan file baru bernama mywatchlist.html
 8. Di folder mywatchlist, buat file baru bernama urls.py. Ciptakan routing terhadap fungsi-fungsi di views.py
 9. Pada folder project_django, daftarkan aplikasi mywatchlist ke urls.py dengan menambahkannya ke urlpatterns
-10. Git add, commit, push untuk deploy (deployment sudah dilakukan [disini] (https://github.com/amrul-hzz/tugas-pbp/tree/main/katalog)) 
+10. Git add, commit, push untuk deploy (deployment sudah dilakukan ![disini] (https://github.com/amrul-hzz/tugas-pbp/tree/main/katalog)) 
 
 # Screenshot Postman
 HTML
