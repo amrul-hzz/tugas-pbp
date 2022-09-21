@@ -1,0 +1,25 @@
+[
+    {
+        "model":"mywatchlist.barangmywatchlist",
+        "pk":1,
+        "fields":{
+            "watched": "True",
+            "title":"Memento",
+            "rating": "9",
+            "release_date": "2020-09-16",
+            "review": "Dead wife"
+        }
+    },
+
+    {
+        "model":"mywatchlist.barangmywatchlist",
+        "pk":2,
+        "fields":{
+            "watched":"True",
+            "title":"Ratatouille",
+            "rating": "9",
+            "release_date": "2007-06-22",
+            "review": "Colette."
+        }
+    }
+]
