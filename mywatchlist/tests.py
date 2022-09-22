@@ -8,3 +8,14 @@ class StatusTest(TestCase):
 
         self.assertEqual(response.status_code, 200)
 
+    def test_show_mywatchlist_json(self):
+        client = Client() 
+        response = client.get(reverse('mywatchlist:show_mywatchlist_json'))
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_show_mywatchlist_xml(self):
+        client = Client() 
+        response = client.get(reverse('mywatchlist:show_mywatchlist_xml'))
+
+        self.assertEqual(response.status_code, 200)
