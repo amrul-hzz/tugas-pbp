@@ -21,5 +21,101 @@
             "release_date": "2007-06-22",
             "review": "Colette."
         }
+    },
+
+    {
+        "model":"mywatchlist.barangmywatchlist",
+        "pk":3,
+        "fields":{
+            "watched":"True",
+            "title":"Meet the Robinsons",
+            "rating": "8",
+            "release_date": "2007-03-30",
+            "review": "Ending song slaps hard"
+        }
+    },
+
+    {
+        "model":"mywatchlist.barangmywatchlist",
+        "pk": 4,
+        "fields":{
+            "watched":"True",
+            "title":"Mencuri Raden Saleh",
+            "rating": "8",
+            "release_date": "2022-08-25",
+            "review": "Needs more Tuktuk drifting"
+        }
+    },
+
+    {
+        "model":"mywatchlist.barangmywatchlist",
+        "pk": 5,
+        "fields":{
+            "watched":"False",
+            "title":"Pelem 5",
+            "rating": "0",
+            "release_date": "2003-06-18",
+            "review": "..."
+        }
+    },
+
+    {
+        "model":"mywatchlist.barangmywatchlist",
+        "pk": 6,
+        "fields":{
+            "watched":"False",
+            "title":"Pelem 6",
+            "rating": "0",
+            "release_date": "2003-06-18",
+            "review": "..."
+        }
+    },
+
+    {
+        "model":"mywatchlist.barangmywatchlist",
+        "pk": 7,
+        "fields":{
+            "watched":"False",
+            "title":"Pelem 7",
+            "rating": "0",
+            "release_date": "2003-06-18",
+            "review": "..."
+        }
+    },
+
+    {
+        "model":"mywatchlist.barangmywatchlist",
+        "pk": 8,
+        "fields":{
+            "watched":"False",
+            "title":"Pelem 8",
+            "rating": "0",
+            "release_date": "2003-06-18",
+            "review": "..."
+        }
+    },
+
+    {
+        "model":"mywatchlist.barangmywatchlist",
+        "pk": 9,
+        "fields":{
+            "watched":"False",
+            "title":"Pelem 9",
+            "rating": "0",
+            "release_date": "2003-06-18",
+            "review": "..."
+        }
+    },
+
+    {
+        "model":"mywatchlist.barangmywatchlist",
+        "pk": 10,
+        "fields":{
+            "watched":"False",
+            "title":"Pelem 10",
+            "rating": "0",
+            "release_date": "2003-06-18",
+            "review": "..."
+        }
     }
 ]
