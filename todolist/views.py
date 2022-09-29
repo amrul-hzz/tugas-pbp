@@ -76,10 +76,13 @@ def create_task(request):
 
     return render(request, 'create_task.html', context)
 
-# def change_status(request):
-#     context ={}
-#     return render(request, 'todolist.html', context)
+def change_status(request, id):
+    item = Task.objects.get(pk = id)
+    item.is_finished = item.is_finished ^ 1
+    item.save()
+    return HttpResponseRedirect('../')
 
-# def delete_task(request):
-#     context ={}
-#     return render(request, 'todolist.html', context)
+def delete_task(request, id):
+    item = Task.objects.get(pk = id)
+    item.delete()
+    return HttpResponseRedirect('../')
