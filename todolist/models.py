@@ -8,3 +8,4 @@ class Task(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(max_length=255)
     is_finished = models.BooleanField(default=False)
+    status = models.CharField(default = 'Belum Selesai', max_length=255)

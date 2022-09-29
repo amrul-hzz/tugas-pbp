@@ -79,6 +79,12 @@ def create_task(request):
 def change_status(request, id):
     item = Task.objects.get(pk = id)
     item.is_finished = item.is_finished ^ 1
+
+    if (item.is_finished == True):
+        item.status = 'Selesai'
+    else:
+        item.status = 'Belum Selesai'
+
     item.save()
     return HttpResponseRedirect('../')
 
