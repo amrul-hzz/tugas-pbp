@@ -14,6 +14,11 @@ CSRF token adalah token yang digunakan untuk mencegah serangan CSRF. Token terse
 Ya, bisa. Di dalam class dari form tersebut, kita tambahkan field untuk tiap atribut yang ingin didaftarkan di form. Kemudian, isi dari field-field tersebut didapatkan menggunakan function cleaned_data.get(). Untuk field yang perlu diisi namun masih kosong, raise error.
 
 # Jelaskan proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada database, hingga munculnya data yang telah disimpan pada template HTML.
+1. Setelah pengguna mengisi dan mensubmit form, data diterima django dan di-bind ke form tersebut agar bisa ditampilkan ulang
+2. Data dibershikan dan divalidasi
+3. Apabila data invalid, tampilkan ulang form dan data beserta error message
+4. Apabila data valid, lakukan hal-hal yang dibutuhkan (cth: save, kirim email, upload file, dll.). Data di-POST ke database
+5. Arahkan pengguna ke halaman lain
 
 # Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 
