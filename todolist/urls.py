@@ -4,8 +4,8 @@ from todolist.views import register
 from todolist.views import login_user
 from todolist.views import logout_user
 from todolist.views import create_task
-from todolist.views import change_status
-from todolist.views import delete_task
+# from todolist.views import change_status
+# from todolist.views import delete_task
 
 
 app_name = 'todolist'

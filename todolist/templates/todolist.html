@@ -18,8 +18,6 @@
         <th>{{task.title}}</th>
         <th>{{task.description}}</th>
         <th>{{task.is_finished}}</th>
-        <button><a href="{% url 'todolist:change_status' %}">Change Status</a></button>
-        <button><a href="{% url 'todolist:delete_task' %}">Delete Task</a></button>
     </tr>
 {% endfor %}
 </table>
