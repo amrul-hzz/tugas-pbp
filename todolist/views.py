@@ -75,3 +75,11 @@ def create_task(request):
     }
 
     return render(request, 'create_task.html', context)
+
+def change_status(request):
+    context ={}
+    return render(request, 'todolist.html', context)
+    
+def delete_task(request):
+    context ={}
+    return render(request, 'todolist.html', context)

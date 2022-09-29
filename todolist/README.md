@@ -19,6 +19,7 @@ Ya, bisa. Di dalam class dari form tersebut, kita tambahkan field untuk tiap atr
 3. Apabila data invalid, tampilkan ulang form dan data beserta error message
 4. Apabila data valid, lakukan hal-hal yang dibutuhkan (cth: save, kirim email, upload file, dll.). Data di-POST ke database
 5. Arahkan pengguna ke halaman lain
+6. Dengan melakukan save tadi, database sudah di-update sehingga halaman HTMl yang terkait akan menampilkan data baru saat dimuat ulang
 
 # Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 
