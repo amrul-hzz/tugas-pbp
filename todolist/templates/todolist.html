@@ -18,14 +18,14 @@
         <th>{{task.title}}</th>
         <th>{{task.description}}</th>
         <th>{{task.is_finished}}</th>
-        <th><button><a href="{% url 'todolist:change_status' task.pk %}">Change Status</a></button></th>
-        <th><button><a href="{% url 'todolist:delete_task' task.pk %}">Delete Task</a></button></th>
+        <th><button><a href="{% url 'todolist:change_status' task.pk %}">Ubah Status</a></button></th>
+        <th><button><a href="{% url 'todolist:delete_task' task.pk %}">Hapus Task</a></button></th>
     </tr>
 {% endfor %}
 </table>
 
 <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
-<button><a href="{% url 'todolist:create_task' %}">Create Task</a></button>
+<button><a href="{% url 'todolist:create_task' %}">Tambah Task Baru</a></button>
 
 <br>
 
