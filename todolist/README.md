@@ -65,16 +65,16 @@ Ya, bisa. Di dalam class dari form tersebut, kita tambahkan field untuk tiap atr
 3. External CSS ada pada filenya sendiri (stylesheet). Kelebihannya adalah file HTML jadi lebih rapi dan stylesheet bisa digunakan untuk halaman-halaman yang berbeda. Kekurangannya adalah rendering halaman baru selesai setelah external CSS sudah loaded dan penggunaan banyak stylesheet bisa menambah waktu pengunduhan
 
 - Jelaskan tag HTML5 yang kamu ketahui
-1. <article> mendefinisikan article
-2. <audio> menambahkan audio/audio stream ke dokumen HTML
-3. <canvas> mendefisikan area di dokumen yang bisa dipakai untuk membuat grafik dengan script
-4. <embed> menambahkan konten multimedia
-5. <figure> menambahkan ilustrasi sebagai bagian dari dokumen
-6. <footer> menambahkan footer
-7. <header> menambahkan header 
-8. <main> menandai konten utama
-9. <section> mendefinisikan sebuah bagan dari dokumen
-10. <time> mendefinisikan waktu dan/atau tanggal
+1. article mendefinisikan article
+2. audio menambahkan audio/audio stream ke dokumen HTML
+3. canvas mendefisikan area di dokumen yang bisa dipakai untuk membuat grafik dengan script
+4. embed menambahkan konten multimedia
+5. figure menambahkan ilustrasi sebagai bagian dari dokumen
+6. footer menambahkan footer
+7. header menambahkan header 
+8. main menandai konten utama
+9. section mendefinisikan sebuah bagan dari dokumen
+10. time mendefinisikan waktu dan/atau tanggal
 
 - Jelaskan tipe-tipe CSS selector yang kamu ketahui.
 1. Simple selectors: memilih elemen berdasarkan tag (element selector), id (id selector), atau class(class selector) untuk mengubah properti elemen tersebut.
