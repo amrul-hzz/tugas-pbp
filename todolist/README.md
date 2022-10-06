@@ -60,19 +60,9 @@ Ya, bisa. Di dalam class dari form tersebut, kita tambahkan field untuk tiap atr
 # TUGAS 5
 
 - Apa perbedaan dari Inline, Internal, dan External CSS? Apa saja kelebihan dan kekurangan dari masing-masing style?
-INLINE: CSS ada di dalam tiap tag tanpa selector<br>
-KELEBIHAN INLINE: perubahan dapat diimplementasikan dengan cepat, tidak perlu membuat file baru<br>
-KEKURANGAN INLINE: banyak pengulangan, tidak rapi, membuat halaman berat dan download lama
-<br>
-<br>
-INTERNAL: CSS ada pada tag head di file HTML<br>
-KELEBIHAN INTERNAL: bisa menggunakan class dan ID selector, tidak berurusan dengan banyak file<br>
-KEKURANGAN INTERNAL: gabungan CSS dan TML membuat ukuran halaman jadi besar sehingga loadingnya lama<br>
-<br>
-<br>
-EXTERNAL: CSS ada pada filenya sendiri (stylesheet)<br>
-KELEBIHAN EXTERNAL: file HTML lebih rapi, stylesheet bisa digunakan untuk halaman-halaman yang berbeda <br>
-KEKURANGAN EXTERNAL: rendering halaman baru selesai setelah external CSS sudah loaded, penggunaan banyak stylesheet bisa menambah waktu pengunduhan
+1. Inline CSS ada di dalam tiap tag tanpa selector. Kelebihannya perubahan dapat diimplementasikan dengan cepat dan tidak perlu membuat file baru. Kekurangannya adalah ada banyak pengulangan, tidak rapi, dan membuat halaman berat dan download lama
+2. Internal CSS ada pada tag head di file HTML. Kelebihannya adalah bisa menggunakan class dan ID selector serta tidak berurusan dengan banyak file. Kekurangannya adalah gabungan CSS dan HTML membuat ukuran halaman jadi besar sehingga loadingnya lama.
+3. External CSS ada pada filenya sendiri (stylesheet). Kelebihannya adalah file HTML jadi lebih rapi dan stylesheet bisa digunakan untuk halaman-halaman yang berbeda. Kekurangannya adalah rendering halaman baru selesai setelah external CSS sudah loaded dan penggunaan banyak stylesheet bisa menambah waktu pengunduhan
 
 - Jelaskan tag HTML5 yang kamu ketahui
 1. <article> mendefinisikan article
