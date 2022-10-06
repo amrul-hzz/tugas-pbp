@@ -95,5 +95,6 @@ KEKURANGAN EXTERNAL: rendering halaman baru selesai setelah external CSS sudah l
 
 - Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 1. Menambahkan bootstrap ke base.html
-2. Menambahkan CSS ke kogin.html, register.html, create_task.html, todolist.html dengan menambahkan class bawaan bootstrap
+2. Menambahkan CSS ke login.html, register.html, create_task.html, todolist.html dengan menambahkan class bawaan bootstrap
 3. Mengenkapsulasi setiap object Task dalam card menggunakan berbagai macam tag dan class.s
+4. Menambahkan efek hover pada card dengan class selector

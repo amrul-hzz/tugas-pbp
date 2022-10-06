@@ -9,6 +9,48 @@
 <body>
     {% block content %}
 
+    <style type="text/css">
+       
+        * {
+             box-sizing: border-box;
+         }
+ 
+         body {
+             font-family: Arial, Helvetica, sans-serif;
+         }
+ 
+         /* Float four columns side by side */
+         .column {
+             float: left;
+             width: 25%;
+             padding: 0 10px;
+             margin: 5px;
+         }
+ 
+         /* Remove extra left and right margins, due to padding */
+         .row {margin: 0 -5px;}
+ 
+         /* Clear floats after the columns */
+         .row:after {
+             content: "";
+             display: table;
+             clear: both;
+         }
+ 
+         /* Responsive columns */
+         @media screen and (max-width: 600px) {
+             .column {
+                 width: 100%;
+                 display: block;
+                 margin: 5px
+             }
+         }
+         
+         div.card:hover{
+            margin: 3px;
+         }
+     </style>
+
     <nav class="navbar bg-dark">
         <div class="container-fluid">
             <span class="navbar-brand mb-0 h1" style="color: hsl(0, 0%, 96%)">Hi, {{username}}!</span>
@@ -25,21 +67,27 @@
     <br>
     <br>
 
-    <table>
+    <div class="row">
         {% for task in list_task %}
-        <div class="card" style="width: 18rem; margin:30px;" onMouseOver="this.style.margin='15px'" onMouseOut="this.style.margin='30px'">
-            <div class="card-header">{{task.status}}</div>
-            <div class="card-body">
-              <h5 class="card-title"><b>{{task.title}}</b></h5>
-              <p class="card-text">{{task.description}}</p>
-              <a href="{% url 'todolist:change_status' task.pk %}" class="btn btn-primary">Ubah Status</a>
-              <a href="{% url 'todolist:delete_task' task.pk %}" class="btn btn-primary">Hapus Task</a>
+    
+        <div class="column">
+            <div class="card">
+                <div class="card-header">{{task.status}}</div>
+                <div class="card-body">
+                <h5 class="card-title"><b>{{task.title}}</b></h5>
+                <p class="card-text">{{task.description}}</p>
+                <a href="{% url 'todolist:change_status' task.pk %}" class="btn btn-primary">Ubah Status</a>
+                <a href="{% url 'todolist:delete_task' task.pk %}" class="btn btn-primary">Hapus Task</a>
+                </div>
+                <div class="card-footer text-muted">Created on {{task.date}} by {{task.user}}</div>
             </div>
-            <div class="card-footer text-muted">Created on {{task.date}} by {{task.user}}</div>
+
         </div>
-          
-    {% endfor %}
-    </table>
+        
+        {% endfor %}
+
+    </div>
+    
 
     <br>
 
