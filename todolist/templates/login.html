@@ -1,45 +1,77 @@
 {% extends 'base.html' %}
 
-{% block meta %}
-<title>Login</title>
-{% endblock meta %}
+<head>
+    {% block meta %}
+    <title>Login</title>
+    {% endblock meta %}
+</head>
 
-{% block content %}
-
-<div class = "login">
-
-    <h1>Login</h1>
-
-    <form method="POST" action="">
-        {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
+<body>
+    {% block content %}
+    <!-- Section: Design Block -->
+    <section class="">
+        <!-- Jumbotron -->
+        <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+          <div class="container">
+            <div class="row gx-lg-5 align-items-center">
+              <div class="col-lg-6 mb-5 mb-lg-0">
+                <h1 class="my-5 display-3 fw-bold ls-tight">
+                  To-Do List <br />
+                  <span class="text-primary">by amrul-hzz</span>
+                </h1>
+                <p style="color: hsl(217, 10%, 50.8%)">
+                  Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP
+                  Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP
+                  Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP
+                </p>
+              </div>
+      
+              <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="card">
+                  <div class="card-body py-5 px-md-5">
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <table>
+                            <tr>
+                                <td>Username: </td>
+                                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
+                            </tr>
+                                    
+                            <tr>
+                                <td>Password: </td>
+                                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
+                            </tr>
+                
+                            <tr>
+                                <td>
+                                    <button type="submit" class="btn btn-primary btn-block mb-4">
+                                        <input class="btn login_btn" type="submit" value="Login">
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
                     
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
 
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
-    </form>
+                    {% if messages %}
+                        <ul>
+                            {% for message in messages %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}     
 
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}     
-        
-    Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
+                    Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
 
-</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Jumbotron -->
+      </section>
+      <!-- Section: Design Block -->
+      {% endblock content %}
+</body>
 
-{% endblock content %}

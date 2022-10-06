@@ -1,35 +1,63 @@
 
 {% extends 'base.html' %}
 
-{% block meta %}
-<title>Registrasi Akun</title>
-{% endblock meta %}
+<head>
+    {% block meta %}
+    <title>Registrasi Akun</title>
+    {% endblock meta %}
+</head>
 
-{% block content %}  
+<body>
+    {% block content %}
+    <!-- Section: Design Block -->
+    <section class="">
+        <!-- Jumbotron -->
+        <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+          <div class="container">
+            <div class="row gx-lg-5 align-items-center">
+              <div class="col-lg-6 mb-5 mb-lg-0">
+                <h1 class="my-5 display-3 fw-bold ls-tight">
+                  Create A New Account<br />
+                  <span class="text-primary">...</span>
+                </h1>
+                <p style="color: hsl(217, 10%, 50.8%)">
+                  Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP
+                  Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP
+                  Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP Tugas 5 PBP
+                </p>
+              </div>
+      
+              <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="card">
+                  <div class="card-body py-5 px-md-5">
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <table>  
+                            {{ form.as_table }}  
+                            <tr>  
+                                <td></td>
+                                <td><input type="submit" class="btn btn-primary btn-block mb-4" name="submit" value="Daftar"/></td>  
+                            </tr>  
+                        </table>  
+                    </form>
+                    
 
-<div class = "login">
-    
-    <h1>Formulir Registrasi</h1>  
+                    {% if messages %}
+                        <ul>
+                            {% for message in messages %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}     
 
-        <form method="POST" >  
-            {% csrf_token %}  
-            <table>  
-                {{ form.as_table }}  
-                <tr>  
-                    <td></td>
-                    <td><input type="submit" name="submit" value="Daftar"/></td>  
-                </tr>  
-            </table>  
-        </form>
-
-    {% if messages %}  
-        <ul>   
-            {% for message in messages %}  
-                <li>{{ message }}</li>  
-                {% endfor %}  
-        </ul>   
-    {% endif %}
-
-</div>  
-
-{% endblock content %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Jumbotron -->
+      </section>
+      <!-- Section: Design Block -->
+      {% endblock content %}
+</body>

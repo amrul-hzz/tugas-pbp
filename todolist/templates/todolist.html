@@ -1,32 +1,47 @@
 {% extends 'base.html' %}
 
-{% block content %}
-<h3>Hi, {{username}}!</h3>
+<head>
+    {% block meta %}
+    <title>To-Do List</title>
+    {% endblock meta %}
+</head>
 
-<table>
-    <tr>
-    <th>User</th>
-    <th>Date</th>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Status</th>
-    </tr>
-    {% for task in list_task %}
-    <tr>
-        <th>{{task.user}}</th>
-        <th>{{task.date}}</th>
-        <th>{{task.title}}</th>
-        <th>{{task.description}}</th>
-        <th>{{task.status}}</th>
-        <th><button><a href="{% url 'todolist:change_status' task.pk %}">Ubah Status</a></button></th>
-        <th><button><a href="{% url 'todolist:delete_task' task.pk %}">Hapus Task</a></button></th>
-    </tr>
-{% endfor %}
-</table>
+<body>
+    {% block content %}
 
-<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
-<button><a href="{% url 'todolist:create_task' %}">Tambah Task Baru</a></button>
+    <nav class="navbar bg-dark">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1" style="color: hsl(0, 0%, 96%)">Hi, {{username}}!</span>
+            <div>
+                <a href="{% url 'todolist:logout' %}" class="btn btn-primary">Logout</a>
+                <a href="{% url 'todolist:create_task' %}" class="btn btn-primary">Tambah Task Baru</a>
+            </div>
+            
+        </div>
+    </nav>
 
-<br>
+    
 
-{% endblock content %}
+    <br>
+    <br>
+
+    <table>
+        {% for task in list_task %}
+        <div class="card" style="width: 18rem; margin:30px;" onMouseOver="this.style.margin='15px'" onMouseOut="this.style.margin='30px'">
+            <div class="card-header">{{task.status}}</div>
+            <div class="card-body">
+              <h5 class="card-title"><b>{{task.title}}</b></h5>
+              <p class="card-text">{{task.description}}</p>
+              <a href="{% url 'todolist:change_status' task.pk %}" class="btn btn-primary">Ubah Status</a>
+              <a href="{% url 'todolist:delete_task' task.pk %}" class="btn btn-primary">Hapus Task</a>
+            </div>
+            <div class="card-footer text-muted">Created on {{task.date}} by {{task.user}}</div>
+        </div>
+          
+    {% endfor %}
+    </table>
+
+    <br>
+
+    {% endblock content %}
+</body>
