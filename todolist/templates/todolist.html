@@ -1,95 +1,187 @@
 {% extends 'base.html' %}
 
 <head>
-    {% block meta %}
-    <title>To-Do List</title>
-    {% endblock meta %}
+  {% block meta %}
+  <title>To-Do List</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+        $.get(window.location.href + "json/", function (data) {
+            for(i = 0; i < data.length; i++){
+                showTaskCard(data[i]);
+            }
+          
+        });
+
+        function showTaskCard(data) {
+            $("#task-cards").append(
+                `
+                        <div class="column">
+                            <div class="card" id="card-${data.pk}">
+                                <div class="card-header">${data.fields.status}</div>
+
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>${data.fields.title}</b></h5>
+                                    <p class="card-text">${data.fields.description}</p>
+                                </div>
+
+                                <div class="card-footer text-muted">Created on ${data.fields.date} by ${data.fields.user}</div>
+                            </div>
+                        </div>
+                        `
+            );
+        }
+
+        $("#new-task-form").submit(function (event) {
+            event.preventDefault();
+
+            $.post(window.location.href + "add/", {
+                title: $("#title").val(),
+                description: $("#description").val(),
+            }).done(function (data) {
+                showTaskCard(data);
+                const cards = document.getElementById("task-cards");
+                cards.insertAdjacentHTML("beforestart", $(`#card-${data.pk}`));
+            });
+        });
+    });
+
+
+    
+  </script>
+  {% endblock meta %}
 </head>
 
 <body>
-    {% block content %}
+  {% block content %}
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 
-    <style type="text/css">
-       
-        * {
-             box-sizing: border-box;
-         }
- 
-         body {
-             font-family: Arial, Helvetica, sans-serif;
-         }
- 
-         /* Float four columns side by side */
-         .column {
-             float: left;
-             width: 25%;
-             padding: 0 10px;
-             margin: 5px;
-         }
- 
-         /* Remove extra left and right margins, due to padding */
-         .row {margin: 0 -5px;}
- 
-         /* Clear floats after the columns */
-         .row:after {
-             content: "";
-             display: table;
-             clear: both;
-         }
- 
-         /* Responsive columns */
-         @media screen and (max-width: 600px) {
-             .column {
-                 width: 100%;
-                 display: block;
-                 margin: 5px
-             }
-         }
-         
-         div.card:hover{
-            margin: 3px;
-         }
-     </style>
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+    }
 
-    <nav class="navbar bg-dark">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1" style="color: hsl(0, 0%, 96%)">Hi, {{username}}!</span>
-            <div>
-                <a href="{% url 'todolist:logout' %}" class="btn btn-primary">Logout</a>
-                <a href="{% url 'todolist:create_task' %}" class="btn btn-primary">Tambah Task Baru</a>
-            </div>
-            
-        </div>
-    </nav>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-    
+    /* Float four columns side by side */
+    .column {
+      float: left;
+      width: 25%;
+      padding: 0 10px;
+      margin: 5px;
+    }
 
-    <br>
-    <br>
+    /* Remove extra left and right margins, due to padding */
+    .row {
+      margin: 0 -5px;
+    }
 
-    <div class="row">
-        {% for task in list_task %}
-    
-        <div class="column">
-            <div class="card">
-                <div class="card-header">{{task.status}}</div>
-                <div class="card-body">
-                <h5 class="card-title"><b>{{task.title}}</b></h5>
-                <p class="card-text">{{task.description}}</p>
-                <a href="{% url 'todolist:change_status' task.pk %}" class="btn btn-primary">Ubah Status</a>
-                <a href="{% url 'todolist:delete_task' task.pk %}" class="btn btn-primary">Hapus Task</a>
-                </div>
-                <div class="card-footer text-muted">Created on {{task.date}} by {{task.user}}</div>
-            </div>
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
 
-        </div>
-        
-        {% endfor %}
+    /* Responsive columns */
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+        display: block;
+        margin: 5px;
+      }
+    }
 
+    div.card:hover {
+      margin: 3px;
+    }
+  </style>
+
+  <nav class="navbar bg-dark">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1" style="color: hsl(0, 0%, 96%)"
+        >Hi, {{username}}!</span
+      >
+      <div>
+        <a href="{% url 'todolist:logout' %}" class="btn btn-primary">Logout</a>
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+        >
+          Tambah Task Baru
+        </button>
+      </div>
     </div>
-    
+  </nav>
 
-    <br>
+  <br />
+  <br />
 
-    {% endblock content %}
+  <div class="row">
+    <div class="task-cards" id="task-cards"></div>
+  </div>
+
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="staticBackdrop"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="staticBackdropLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <div class="modal-body">
+          <form id="new-task-form" method="POST">
+            {% csrf_token %}
+
+            <div id="title-group" class="" form-group>
+              <label for="task-title">Title</label>
+              <input type="text" class="form-control" id="title" name="title" />
+            </div>
+
+            <div id="description-group" class="" form-group>
+              <label for="task-description">Description</label>
+              <input type="text" class="form-control" id="title" name="title" />
+            </div>
+
+            <br />
+
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <input type="submit" class="btn btn-primary" value="Submit" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br />
+
+  {% endblock content %}
 </body>
+
