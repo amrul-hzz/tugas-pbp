@@ -20,12 +20,10 @@
                         <div class="column">
                             <div class="card" id="card-${data.pk}">
                                 <div class="card-header">${data.fields.status}</div>
-
                                 <div class="card-body">
                                     <h5 class="card-title"><b>${data.fields.title}</b></h5>
                                     <p class="card-text">${data.fields.description}</p>
                                 </div>
-
                                 <div class="card-footer text-muted">Created on ${data.fields.date} by ${data.fields.user}</div>
                             </div>
                         </div>
@@ -184,4 +182,3 @@
 
   {% endblock content %}
 </body>
-
