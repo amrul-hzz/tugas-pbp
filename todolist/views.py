@@ -108,11 +108,12 @@ def change_status(request, id):
     item.save()
     return HttpResponseRedirect('../')
 
-
+@login_required(login_url='/todolist/login/')
+@csrf_exempt
 def delete_task(request, id):
     item = Task.objects.get(pk=id)
     item.delete()
-    return HttpResponseRedirect('../')
+    return redirect('todolist:show_todolist')
 
 
 @login_required(login_url='/todolist/login/')
@@ -148,4 +149,3 @@ def add(request):
         })
     else:
         return HttpResponseBadRequest('Invalid request')
-

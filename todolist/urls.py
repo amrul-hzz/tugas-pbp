@@ -9,7 +9,6 @@ from todolist.views import change_status
 from todolist.views import delete_task
 from todolist.views import add 
 
-
 app_name = 'todolist'
 
 urlpatterns = [
@@ -20,6 +19,6 @@ urlpatterns = [
     path('logout/', logout_user, name='logout'),
     path('create-task/', create_task, name='create_task'),
     path('change_status/<int:id>', change_status, name='change_status'),
-    path('delete_task/<int:id>', delete_task, name = 'delete_task'),
-    path('add/', add, name = 'add')
+    path('delete_task/<int:id>/', delete_task, name = 'delete_task'),
+    path('add/', add, name = 'add'),
 ]

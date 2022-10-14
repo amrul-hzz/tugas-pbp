@@ -10,6 +10,7 @@
         $.get(window.location.href + "json/", function (data) {
             for(i = 0; i < data.length; i++){
                 showTaskCard(data[i]);
+                deleteTask(data[i]);
             }
           
         });
@@ -17,14 +18,15 @@
         function showTaskCard(data) {
             $("#task-cards").append(
                 `
-                        <div class="column">
+                        <div class="column" id="column-${data.pk}">
                             <div class="card" id="card-${data.pk}">
                                 <div class="card-header">${data.fields.status}</div>
                                 <div class="card-body">
                                     <h5 class="card-title"><b>${data.fields.title}</b></h5>
                                     <p class="card-text">${data.fields.description}</p>
+                                    <a class="btn btn-primary" id="delete-${data.pk}">Hapus Task</a>
                                 </div>
-                                <div class="card-footer text-muted">Created on ${data.fields.date} by ${data.fields.user.username}</div>
+                                <div class="card-footer text-muted">Created on ${data.fields.date}</div>
                             </div>
                         </div>
                         `
@@ -44,6 +46,18 @@
             });
             $("#staticBackdrop").modal("hide");
         });
+
+
+        function deleteTask(data){
+          $(`#delete-${data.pk}`).click(function(){
+            $.post(window.location.href + `delete_task/${data.pk}/`, {}).done(
+              (res) => {
+                $(`#column-${data.pk}`).remove();
+              }
+            );
+          });
+        }
+        
     });
 
 
