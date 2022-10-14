@@ -132,8 +132,6 @@ def add(request):
                         is_finished=is_finished, status=status)
         new_task.save()
 
-        print("username adalah " + new_task.user.username)
-
         return JsonResponse({
 
             "pk": new_task.pk,

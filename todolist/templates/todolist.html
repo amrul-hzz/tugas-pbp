@@ -41,6 +41,8 @@
                 description: $("#description").val(),
             }).done(function (data) {
                 showTaskCard(data);
+                deleteTask(data);
+                
                 const cards = document.getElementById("task-cards");
                 cards.insertAdjacentHTML("beforestart", $(`#card-${data.pk}`));
             });
