@@ -24,7 +24,7 @@
                                     <h5 class="card-title"><b>${data.fields.title}</b></h5>
                                     <p class="card-text">${data.fields.description}</p>
                                 </div>
-                                <div class="card-footer text-muted">Created on ${data.fields.date} by ${data.fields.user}</div>
+                                <div class="card-footer text-muted">Created on ${data.fields.date} by ${data.fields.user.username}</div>
                             </div>
                         </div>
                         `
@@ -42,6 +42,7 @@
                 const cards = document.getElementById("task-cards");
                 cards.insertAdjacentHTML("beforestart", $(`#card-${data.pk}`));
             });
+            $("#staticBackdrop").modal("hide");
         });
     });
 
@@ -159,7 +160,7 @@
 
             <div id="description-group" class="" form-group>
               <label for="task-description">Description</label>
-              <input type="text" class="form-control" id="title" name="title" />
+              <input type="text" class="form-control" id="description" name="description" />
             </div>
 
             <br />

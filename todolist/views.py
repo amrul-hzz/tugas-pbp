@@ -1,3 +1,4 @@
+from operator import is_
 from django.shortcuts import render
 from todolist.models import Task
 from django.shortcuts import redirect
@@ -118,20 +119,26 @@ def delete_task(request, id):
 @csrf_exempt
 def add(request):
     if request.method == 'POST':
-        user = request.user,
-        date = datetime.date.today(),
-        title = request.POST.get("title"),
-        description = request.POST.get("description"),
-        new_task = Task(user=user, date=date, title=title,
-                        description=description)
+        
+        user = request.user
+        date = datetime.date.today()
+        title = request.POST.get("title")
+        description = request.POST.get("description")
+        is_finished = False
+        status = "Belum selesai"
+        
+        new_task = Task(user=user, date=date, title=title, description=description, 
+                        is_finished=is_finished, status=status)
         new_task.save()
+
+        print("username adalah " + new_task.user.username)
 
         return JsonResponse({
 
             "pk": new_task.pk,
             "fields":
             {
-                "user": new_task.user,
+                "user": new_task.user.username,
                 "date": new_task.date,
                 "title": new_task.title,
                 "description": new_task.description,
@@ -141,3 +148,4 @@ def add(request):
         })
     else:
         return HttpResponseBadRequest('Invalid request')
+
